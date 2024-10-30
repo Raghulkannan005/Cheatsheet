@@ -1,14 +1,17 @@
 # Detailed Node.js Course Cheatsheet
 
 ## 1. Start Here
+
 - Node.js: JavaScript runtime built on Chrome's V8 JavaScript engine
-- Key concepts: 
+- Key concepts:
   - Non-blocking I/O
   - Event-driven architecture
   - JavaScript on the server-side
 
 ## 2. Read and Write Files
+
 - File System (fs) module:
+
   ```javascript
   const fs = require('fs');
 
@@ -32,11 +35,13 @@
   ```
 
 ## 3. NPM Modules
+
 - NPM: Node Package Manager
 - Initialize a new project: `npm init`
 - Install a package: `npm install package-name`
 - Install dev dependency: `npm install package-name --save-dev`
 - Update package.json scripts:
+
   ```json
   "scripts": {
     "start": "node index.js",
@@ -45,7 +50,9 @@
   ```
 
 ## 4. Event Emitter
+
 - Built-in module for handling events:
+
   ```javascript
   const EventEmitter = require('events');
 
@@ -61,7 +68,9 @@
   ```
 
 ## 5. Build a Web Server
+
 - Using the built-in http module:
+
   ```javascript
   const http = require('http');
 
@@ -77,8 +86,10 @@
   ```
 
 ## 6. Intro to Express JS framework
+
 - Install Express: `npm install express`
 - Basic Express server:
+
   ```javascript
   const express = require('express');
   const app = express();
@@ -94,15 +105,19 @@
   ```
 
 ## 7. Middleware
+
 - Middleware functions have access to request and response objects
 - Basic middleware:
+
   ```javascript
   app.use((req, res, next) => {
     console.log(`${req.method} ${req.path}`);
     next();
   });
   ```
+
 - Error-handling middleware:
+
   ```javascript
   app.use((err, req, res, next) => {
     console.error(err.stack);
@@ -111,7 +126,9 @@
   ```
 
 ## 8. Routing
+
 - Basic routing:
+
   ```javascript
   app.get('/', (req, res) => {
     res.send('Home Page');
@@ -121,7 +138,9 @@
     res.send('Create User');
   });
   ```
+
 - Route parameters:
+
   ```javascript
   app.get('/users/:id', (req, res) => {
     res.send(`User ${req.params.id}`);
@@ -129,11 +148,13 @@
   ```
 
 ## 9. MVC REST API
+
 - Model: Data and business logic
 - View: Presentation layer (not always used in APIs)
 - Controller: Handles requests, interacts with Model
 - Example structure:
-  ```
+
+  ```javascript
   /models
     user.js
   /controllers
@@ -143,7 +164,9 @@
   ```
 
 ## 10. Authentication
+
 - Using Passport.js for authentication:
+
   ```javascript
   const passport = require('passport');
   const LocalStrategy = require('passport-local').Strategy;
@@ -161,8 +184,10 @@
   ```
 
 ## 11. JWT Auth
+
 - JSON Web Tokens for stateless authentication
 - Using jsonwebtoken package:
+
   ```javascript
   const jwt = require('jsonwebtoken');
 
@@ -180,7 +205,9 @@
   ```
 
 ## 12. User Roles | Authorization
+
 - Implement role-based access control:
+
   ```javascript
   const authorize = (role) => {
     return (req, res, next) => {
@@ -197,9 +224,11 @@
   ```
 
 ## 13. Intro to MongoDB & Mongoose
+
 - MongoDB: NoSQL database
 - Mongoose: ODM (Object Data Modeling) library for MongoDB and Node.js
 - Connect to MongoDB:
+
   ```javascript
   const mongoose = require('mongoose');
 
@@ -210,7 +239,9 @@
   ```
 
 ## 14. Mongoose Data Models
+
 - Define a schema and model:
+
   ```javascript
   const mongoose = require('mongoose');
 
@@ -226,21 +257,29 @@
   ```
 
 ## 15. Async CRUD Operations
+
 - Create:
+
   ```javascript
   const newUser = new User({ name: 'John', email: 'john@example.com', age: 30 });
   await newUser.save();
   ```
+
 - Read:
+
   ```javascript
   const users = await User.find();
   const user = await User.findById(id);
   ```
+
 - Update:
+
   ```javascript
   await User.updateOne({ _id: id }, { $set: { name: 'Jane' } });
   ```
+
 - Delete:
+
   ```javascript
   await User.deleteOne({ _id: id });
   ```

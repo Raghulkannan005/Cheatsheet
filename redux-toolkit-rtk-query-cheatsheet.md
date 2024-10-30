@@ -9,6 +9,7 @@
   - Includes useful utilities
 
 ### Setting up store
+
 ```javascript
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './reducers';
@@ -21,6 +22,7 @@ export default store;
 ```
 
 ### Creating a slice
+
 ```javascript
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -40,7 +42,8 @@ export default counterSlice.reducer;
 ## 2. App Structure & Data Flow
 
 ### Folder structure
-```
+
+```javascript
 src/
   features/
     counter/
@@ -53,12 +56,14 @@ src/
 ```
 
 ### Data flow
+
 1. User interacts with the UI
 2. UI dispatches an action
 3. Reducer processes the action and updates state
 4. UI re-renders based on new state
 
 ### Using hooks
+
 ```javascript
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from './counterSlice';
@@ -83,6 +88,7 @@ function Counter() {
 - Used for async operations in Redux
 
 ### Creating a thunk
+
 ```javascript
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
@@ -96,6 +102,7 @@ export const fetchUsers = createAsyncThunk(
 ```
 
 ### Handling async actions in slice
+
 ```javascript
 const usersSlice = createSlice({
   name: 'users',
@@ -119,6 +126,7 @@ const usersSlice = createSlice({
 - Implement CRUD operations for a blog using Redux Toolkit
 
 ### Post slice example
+
 ```javascript
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
@@ -158,6 +166,7 @@ export default postsSlice.reducer;
 ## 5. Performance Optimizations
 
 ### Memoizing selectors
+
 ```javascript
 import { createSelector } from '@reduxjs/toolkit';
 
@@ -170,6 +179,7 @@ export const selectPostsByUser = createSelector(
 ```
 
 ### Using `createEntityAdapter`
+
 ```javascript
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 
@@ -193,6 +203,7 @@ const postsSlice = createSlice({
 - RTK Query: Powerful data fetching and caching tool
 
 ### Setting up API slice
+
 ```javascript
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
@@ -216,6 +227,7 @@ export const { useGetPostsQuery, useAddPostMutation } = api;
 ```
 
 ### Using RTK Query hooks
+
 ```javascript
 function PostsList() {
   const { data: posts, isLoading } = useGetPostsQuery();
@@ -235,6 +247,7 @@ function PostsList() {
 ## 7. Advanced Redux & RTK Query
 
 ### Transforming API responses
+
 ```javascript
 getPosts: builder.query({
   query: () => 'posts',
@@ -246,6 +259,7 @@ getPosts: builder.query({
 ```
 
 ### Invalidating cache
+
 ```javascript
 addPost: builder.mutation({
   query: (post) => ({
@@ -258,6 +272,7 @@ addPost: builder.mutation({
 ```
 
 ### Optimistic updates
+
 ```javascript
 updatePost: builder.mutation({
   query: ({ id, ...patch }) => ({
@@ -281,6 +296,7 @@ updatePost: builder.mutation({
 ```
 
 ### Custom error handling
+
 ```javascript
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://api.example.com' }),
@@ -292,5 +308,3 @@ export const api = createApi({
   refetchOnReconnect: true,
 });
 ```
-
-This cheat sheet covers the main concepts and code examples for the Redux Toolkit and RTK Query course you outlined. Is there any specific part you'd like me to expand on or explain further?

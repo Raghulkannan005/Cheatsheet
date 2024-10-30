@@ -1,24 +1,7 @@
 # JavaScript Cheatsheet
 
-## Table of Contents
-1. [Variables and Data Types](#variables-and-data-types)
-2. [Operators](#operators)
-3. [Control Structures](#control-structures)
-4. [Functions](#functions)
-5. [Objects and Object-Oriented Programming](#objects-and-object-oriented-programming)
-6. [Arrays and Array Methods](#arrays-and-array-methods)
-7. [String Methods](#string-methods)
-8. [ES6+ Features](#es6-features)
-9. [Asynchronous JavaScript](#asynchronous-javascript)
-10. [DOM Manipulation](#dom-manipulation)
-11. [Error Handling](#error-handling)
-12. [Modules](#modules)
-13. [Regular Expressions](#regular-expressions)
-14. [Best Practices and Tips](#best-practices-and-tips)
-
-## Variables and Data Types
-
 ### Variable Declaration
+
 ```javascript
 var x = 5;         // Function-scoped (avoid using)
 let y = 10;        // Block-scoped
@@ -26,6 +9,8 @@ const z = 15;      // Block-scoped, cannot be reassigned
 ```
 
 ### Data Types
+
+```javascript
 - Number: `let num = 42;`
 - String: `let str = "Hello";`
 - Boolean: `let bool = true;`
@@ -33,8 +18,10 @@ const z = 15;      // Block-scoped, cannot be reassigned
 - Null: `let empty = null;`
 - Symbol: `let sym = Symbol('description');`
 - BigInt: `let bigNum = 1234567890123456789012345678901234567890n;`
+```
 
 ### Type Checking
+
 ```javascript
 typeof variable;   // Returns a string indicating the type
 ```
@@ -42,6 +29,7 @@ typeof variable;   // Returns a string indicating the type
 ## Operators
 
 ### Arithmetic Operators
+
 ```javascript
 +   // Addition
 -   // Subtraction
@@ -54,6 +42,7 @@ typeof variable;   // Returns a string indicating the type
 ```
 
 ### Comparison Operators
+
 ```javascript
 ==  // Equal to (value)
 === // Strict equal to (value and type)
@@ -66,6 +55,7 @@ typeof variable;   // Returns a string indicating the type
 ```
 
 ### Logical Operators
+
 ```javascript
 &&  // Logical AND
 ||  // Logical OR
@@ -73,6 +63,7 @@ typeof variable;   // Returns a string indicating the type
 ```
 
 ### Assignment Operators
+
 ```javascript
 =   // Simple assignment
 +=  // Addition assignment
@@ -84,6 +75,7 @@ typeof variable;   // Returns a string indicating the type
 ```
 
 ### Ternary Operator
+
 ```javascript
 condition ? expressionIfTrue : expressionIfFalse;
 ```
@@ -91,6 +83,7 @@ condition ? expressionIfTrue : expressionIfFalse;
 ## Control Structures
 
 ### If-Else Statement
+
 ```javascript
 if (condition) {
     // code block
@@ -102,6 +95,7 @@ if (condition) {
 ```
 
 ### Switch Statement
+
 ```javascript
 switch (expression) {
     case value1:
@@ -116,6 +110,7 @@ switch (expression) {
 ```
 
 ### For Loop
+
 ```javascript
 for (let i = 0; i < 5; i++) {
     // code block
@@ -123,6 +118,7 @@ for (let i = 0; i < 5; i++) {
 ```
 
 ### While Loop
+
 ```javascript
 while (condition) {
     // code block
@@ -130,6 +126,7 @@ while (condition) {
 ```
 
 ### Do-While Loop
+
 ```javascript
 do {
     // code block
@@ -137,6 +134,7 @@ do {
 ```
 
 ### For...of Loop (ES6)
+
 ```javascript
 for (let item of iterable) {
     // code block
@@ -144,6 +142,7 @@ for (let item of iterable) {
 ```
 
 ### For...in Loop
+
 ```javascript
 for (let key in object) {
     // code block
@@ -153,6 +152,7 @@ for (let key in object) {
 ## Functions
 
 ### Function Declaration
+
 ```javascript
 function functionName(parameter1, parameter2) {
     // code block
@@ -161,6 +161,7 @@ function functionName(parameter1, parameter2) {
 ```
 
 ### Function Expression
+
 ```javascript
 const functionName = function(parameter1, parameter2) {
     // code block
@@ -169,6 +170,7 @@ const functionName = function(parameter1, parameter2) {
 ```
 
 ### Arrow Function (ES6)
+
 ```javascript
 const functionName = (parameter1, parameter2) => {
     // code block
@@ -180,6 +182,7 @@ const square = x => x * x;
 ```
 
 ### Default Parameters (ES6)
+
 ```javascript
 function greet(name = "Guest") {
     return `Hello, ${name}!`;
@@ -187,6 +190,7 @@ function greet(name = "Guest") {
 ```
 
 ### Rest Parameters (ES6)
+
 ```javascript
 function sum(...numbers) {
     return numbers.reduce((total, num) => total + num, 0);
@@ -194,6 +198,7 @@ function sum(...numbers) {
 ```
 
 ### Callback Functions
+
 ```javascript
 function doSomething(callback) {
     // code block
@@ -208,6 +213,7 @@ doSomething(() => {
 ## Objects and Object-Oriented Programming
 
 ### Object Literal
+
 ```javascript
 const person = {
     name: "John",
@@ -219,6 +225,7 @@ const person = {
 ```
 
 ### Constructor Function
+
 ```javascript
 function Person(name, age) {
     this.name = name;
@@ -233,6 +240,7 @@ const john = new Person("John", 30);
 ```
 
 ### Class Declaration (ES6)
+
 ```javascript
 class Person {
     constructor(name, age) {
@@ -249,6 +257,7 @@ const john = new Person("John", 30);
 ```
 
 ### Inheritance (ES6)
+
 ```javascript
 class Employee extends Person {
     constructor(name, age, job) {
@@ -263,6 +272,7 @@ class Employee extends Person {
 ```
 
 ### Getters and Setters
+
 ```javascript
 class Circle {
     constructor(radius) {
@@ -288,6 +298,7 @@ class Circle {
 ## Arrays and Array Methods
 
 ### Array Creation
+
 ```javascript
 const arr1 = [1, 2, 3, 4, 5];
 const arr2 = new Array(1, 2, 3, 4, 5);
@@ -295,6 +306,7 @@ const arr3 = Array.from("Hello");  // ['H', 'e', 'l', 'l', 'o']
 ```
 
 ### Array Methods
+
 ```javascript
 // Adding/Removing Elements
 arr.push(element);       // Add to end
@@ -347,12 +359,12 @@ str.trim();              // Remove whitespace from both ends
 ## ES6+ Features
 
 ### Template Literals
-```javascript
+
 const name = "John";
 console.log(`Hello, ${name}!`);
-```
 
 ### Destructuring Assignment
+
 ```javascript
 // Array destructuring
 const [a, b] = [1, 2];
@@ -362,6 +374,7 @@ const { name, age } = person;
 ```
 
 ### Spread Operator
+
 ```javascript
 const arr1 = [1, 2, 3];
 const arr2 = [...arr1, 4, 5];  // [1, 2, 3, 4, 5]
@@ -371,6 +384,7 @@ const obj2 = { ...obj1, c: 3 };  // { a: 1, b: 2, c: 3 }
 ```
 
 ### Object Property Shorthand
+
 ```javascript
 const name = "John";
 const age = 30;
@@ -378,6 +392,7 @@ const person = { name, age };  // { name: "John", age: 30 }
 ```
 
 ### Promise
+
 ```javascript
 const promise = new Promise((resolve, reject) => {
     // Asynchronous operation
@@ -396,6 +411,7 @@ promise.then(result => {
 ```
 
 ### Async/Await
+
 ```javascript
 async function fetchData() {
     try {
@@ -411,6 +427,7 @@ async function fetchData() {
 ## Asynchronous JavaScript
 
 ### Callbacks
+
 ```javascript
 function fetchData(callback) {
     setTimeout(() => {
@@ -429,6 +446,7 @@ fetchData((error, data) => {
 ```
 
 ### Promises
+
 ```javascript
 function fetchData() {
     return new Promise((resolve, reject) => {
@@ -445,6 +463,7 @@ fetchData()
 ```
 
 ### Async/Await
+
 ```javascript
 async function fetchData() {
     try {
@@ -462,6 +481,7 @@ fetchData();
 ## DOM Manipulation
 
 ### Selecting Elements
+
 ```javascript
 document.getElementById("id");
 document.getElementsByClassName("class");
@@ -471,6 +491,7 @@ document.querySelectorAll("selector");
 ```
 
 ### Modifying Elements
+
 ```javascript
 element.innerHTML = "New content";
 element.textContent = "New text";
@@ -479,6 +500,7 @@ element.style.property = "value";
 ```
 
 ### Creating and Removing Elements
+
 ```javascript
 const newElement = document.createElement("div");
 parentElement.appendChild(newElement);
@@ -487,6 +509,7 @@ element.remove();
 ```
 
 ### Event Handling
+
 ```javascript
 element.addEventListener("click", function(event) {
     // Event handler
@@ -498,6 +521,7 @@ element.removeEventListener("click", handler);
 ## Error Handling
 
 ### Try-Catch Statement
+
 ```javascript
 try {
     // Code that may throw an error
@@ -509,6 +533,7 @@ try {
 ```
 
 ### Throwing Custom Errors
+
 ```javascript
 throw new Error("Custom error message");
 ```
@@ -516,6 +541,7 @@ throw new Error("Custom error message");
 ## Modules
 
 ### Exporting
+
 ```javascript
 // Named exports
 export const name = "John";
@@ -526,6 +552,7 @@ export default function() { /* ... */ }
 ```
 
 ### Importing
+
 ```javascript
 // Named imports
 import { name, greet } from "./module.js";
@@ -540,12 +567,14 @@ import * as myModule from "./module.js";
 ## Regular Expressions
 
 ### Creating Regular Expressions
+
 ```javascript
 const regex1 = /pattern/;
 const regex2 = new RegExp("pattern");
 ```
 
 ### Regular Expression Methods
+
 ```javascript
 regex.test(str);     // Returns true if pattern matches
 str.match(regex);    // Returns an array of matches
