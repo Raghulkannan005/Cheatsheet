@@ -51,22 +51,6 @@ my-next-project/
 ├── public/               # Static assets
 ├── next.config.js        # Next.js configuration
 └── tsconfig.json         # TypeScript configuration
-my-next-project/
-│
-├── src/                  # Source directory
-│   ├── app/              # App Router directory
-│   │   ├── layout.tsx    # Root layout
-│   │   ├── page.tsx      # Home page
-│   │   └── about/
-│   │       └── page.tsx  # About page route
-│   │
-│   ├── components/       # Reusable React components
-│   ├── lib/              # Utility functions
-│   └── styles/           # Global styles
-│
-├── public/               # Static assets
-├── next.config.js        # Next.js configuration
-└── tsconfig.json         # TypeScript configuration
 
 ```
 
@@ -105,9 +89,9 @@ export default function PostDetailPage({ params }: PostParams) {
 // Handling multiple dynamic segments
 // src/app/products/[category]/[id]/page.tsx
 type ProductParams = {
-  params: { 
-    category: string, 
-    id: string 
+  params: {
+    category: string,
+    id: string
   }
 }
 
@@ -174,11 +158,13 @@ export default function ClientDataPage() {
 ### Nested Layouts
 
 ```typescript
+
 // src/app/layout.tsx (Root Layout)
-export default function RootLayout({ 
-  children 
-}: { 
-  children: React.ReactNode 
+
+export default function RootLayout({
+  children
+}: {
+  children: React.ReactNode
 }) {
   return (
     <html>
@@ -192,10 +178,10 @@ export default function RootLayout({
 }
 
 // src/app/dashboard/layout.tsx
-export default function DashboardLayout({ 
-  children 
-}: { 
-  children: React.ReactNode 
+export default function DashboardLayout({
+  children
+}: {
+  children: React.ReactNode
 }) {
   return (
     <div className="dashboard">
@@ -244,3 +230,92 @@ export async function POST(request: Request) {
 2. The App Router (13+) provides powerful file-system based routing
 3. Server components enable efficient, performant data fetching
 4. Flexibility in rendering: static generation, server-side rendering, and client-side rendering
+
+## Differences between Next.js 15 and 13
+
+- **Improved Performance**: Next.js 15 introduces enhanced performance optimizations, reducing build times and improving runtime performance.
+- **Enhanced Server Components**: Server components in Next.js 15 come with better support and more features, making server-side rendering more efficient.
+- **New Routing Features**: The routing system has been further improved in Next.js 15, providing more flexibility and control over route handling.
+- **Updated API Routes**: API routes in Next.js 15 have been updated to support more use cases and provide better performance.
+- **Better Developer Experience**: Next.js 15 includes improvements to the developer experience, such as faster refresh times and better error handling.
+
+## New Features in Next.js 15
+
+### Enhanced Performance
+
+Next.js 15 introduces several performance improvements:
+
+- **Faster Build Times**: Optimized build process to reduce build times significantly.
+- **Improved Runtime Performance**: Enhancements in the runtime to ensure faster page loads and better overall performance.
+
+### Advanced Server Components
+
+Server components have been enhanced with new capabilities:
+
+- **Better Data Fetching**: Improved APIs for data fetching, making it easier to fetch and manage data on the server side.
+- **Enhanced Caching**: More granular control over caching strategies for server components.
+
+### Improved Routing System
+
+The routing system in Next.js 15 has been further refined:
+
+- **Dynamic Route Matching**: More flexible and powerful dynamic route matching capabilities.
+- **Nested Routes**: Enhanced support for nested routes, allowing for more complex routing scenarios.
+
+### Updated API Routes
+
+API routes have been updated to support more use cases:
+
+- **Middleware Support**: Built-in support for middleware in API routes, enabling more advanced request handling.
+- **Improved Performance**: Optimizations to ensure API routes are faster and more efficient.
+
+### Better Developer Experience
+
+Next.js 15 focuses on improving the developer experience:
+
+- **Faster Refresh Times**: Reduced refresh times during development for a more seamless experience.
+- **Enhanced Error Handling**: Better error messages and debugging tools to help developers identify and fix issues quickly.
+
+### New Middleware Capabilities
+
+Next.js 15 introduces new middleware capabilities:
+
+- **Edge Middleware**: Run middleware at the edge for faster response times and improved performance.
+- **Advanced Middleware APIs**: More powerful APIs for creating and managing middleware.
+
+### Improved Static Site Generation
+
+Static site generation has been enhanced:
+
+- **Incremental Static Regeneration**: More efficient incremental static regeneration, allowing for faster updates to static pages.
+- **Better Support for Dynamic Content**: Improved handling of dynamic content in static sites.
+
+### Enhanced TypeScript Support
+
+TypeScript support has been improved:
+
+- **Faster Type Checking**: Optimized type checking for faster development.
+- **Better Integration**: Improved integration with TypeScript features and tools.
+
+### New CLI Features
+
+The Next.js CLI has been updated with new features:
+
+- **Interactive Setup**: Enhanced interactive setup with more options and better guidance.
+- **Improved Commands**: New and improved commands for managing Next.js projects.
+
+### Advanced Analytics
+
+Next.js 15 includes advanced analytics features:
+
+- **Performance Metrics**: Detailed performance metrics to help developers optimize their applications.
+- **User Insights**: Insights into user behavior and interactions.
+
+### Enhanced Security
+
+Security has been a focus in Next.js 15:
+
+- **Built-in Security Features**: New built-in security features to protect applications from common vulnerabilities.
+- **Improved Security Practices**: Updated best practices and guidelines for securing Next.js applications.
+
+###
