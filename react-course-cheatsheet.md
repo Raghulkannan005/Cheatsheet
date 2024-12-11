@@ -658,16 +658,3 @@
     </StoreProvider>
   );
   ```
-
-- Use in components:
-
-  ```jsx
-  import { useStoreState, useStoreActions } from 'easy-peasy';
-
-  const TodoList = () => {
-    const todos = useStoreState(state => state.todos);
-    const addTodo = useStoreActions(actions => actions.addTodo);
-  
-    return (
-      <div>
-        {todos.map(todo => <div key={todo.id}>{todo.
